@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site Yönetim Defteri — Gizlilik Politikası</title>
+<style>
+  :root { --laci:#16395C; --kehribar:#E08A2B; --zemin:#F8F7F3; --metin:#1a2027; }
+  body { margin:0; background:var(--zemin); color:var(--metin); font:16px/1.65 -apple-system, "Segoe UI", Roboto, sans-serif; }
+  header { background:var(--laci); color:#fff; padding:28px 16px; border-bottom:4px solid var(--kehribar); }
+  header h1 { margin:0 auto; max-width:760px; font-size:26px; }
+  header p { margin:6px auto 0; max-width:760px; opacity:.85; }
+  main { max-width:760px; margin:0 auto; padding:8px 16px 48px; }
+  h2 { color:var(--laci); font-size:19px; margin-top:32px; }
+  li { margin:4px 0; }
+  .kutu { background:#fff; border-left:4px solid var(--kehribar); padding:12px 16px; border-radius:6px; }
+  footer { max-width:760px; margin:0 auto; padding:0 16px 32px; font-size:14px; opacity:.7; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Site Yönetim Defteri — Gizlilik Politikası</h1>
+  <p>Son güncelleme: 15 Ekim 2026</p>
+</header>
+<main>
+  <p class="kutu"><strong>Kısaca:</strong> Site Yönetim Defteri hiçbir kişisel veriyi toplamaz, bir sunucuya göndermez ve üçüncü taraflarla paylaşmaz. Girdiğiniz bilgilerin ve dekont resimlerinin tamamı yalnızca kendi cihazınızda saklanır. Uygulamada reklam, analiz aracı, hesap, şifre ya da SMS ile giriş yoktur; uygulama internet izni istemez.</p>
+
+  <h2>1. Uygulama hangi bilgileri işler?</h2>
+  <p>Apartman / site yöneticisi, hesapları tutabilmek için şu bilgileri kendisi girer:</p>
+  <ul>
+    <li>site adı, adresi, yöneticinin adı, bloklar ve daireler (numara, kat, arsa payı, alan, kişi sayısı),</li>
+    <li>kat malikinin ve varsa kiracının adı,</li>
+    <li>sakinin cep telefonu numarası — <strong>yalnızca</strong> davetin yöneticinin kendi WhatsApp'ından gönderilmesi için; isteğe bağlıdır,</li>
+    <li>aidat, ek ödeme ve gider payı borçları, ödemeler, kasa gelir ve giderleri,</li>
+    <li>ödeme dekontlarının fotoğrafları ve bunlardan okunan tutar,</li>
+    <li>ortak görevlerin sırası, dairelerin müsait olmadığı günler, duyurular ve sakin talepleri.</li>
+  </ul>
+  <p>Kimlik numarası, e-posta ve banka kartı bilgisi sorulmaz ve tutulmaz. Görev muafiyetinin ya da müsait olmamanın <strong>nedeni</strong> kaydedilmez.</p>
+
+  <h2>2. Bilgiler nerede saklanır?</h2>
+  <p>Tüm veriler cihazınızın yerel depolamasında (Android'de uygulamanın kendi veri alanında) tutulur. Geliştiricinin herhangi bir sunucusu yoktur ve verilerinize erişemez.</p>
+
+  <h2>3. Rehber ve telefon numarası</h2>
+  <p>Yönetici bir sakini rehberden seçmek isterse Android'in kendi kişi seçicisi açılır; uygulama yalnızca seçilen tek kişinin adını ve numarasını alır. Rehber izni (READ_CONTACTS) istenmez, rehberin geri kalanına erişilmez. Numara yalnızca yöneticinin cihazında durur; sakinlere giden pakete, raporlara ve yedek dışındaki hiçbir çıktıya girmez. Davet, yöneticinin kendi WhatsApp uygulaması açılarak gönderilir; gönderim WhatsApp'ın gizlilik koşullarına tabidir.</p>
+
+  <h2>4. Dekont okuma</h2>
+  <p>Dekontun fotoğrafındaki tutar, uygulamaya gömülü Google ML Kit metin tanıma modeliyle <strong>cihazın üzerinde</strong> okunur; resim hiçbir sunucuya gönderilmez. Dekont resimleri yalnızca yöneticinin cihazında ve (kendisi eklediyse) o dairenin sakininin cihazında saklanır. Diğer sakinler dekontları ve tutarları göremez. Dekontlar iki yıl sonra cihazdan kendiliğinden silinir.</p>
+
+  <h2>5. Sakinlerle paylaşım ve ödeme durumu</h2>
+  <p>Yönetici, sakinlere göndermek üzere <strong>şifrelenmiş</strong> bir paket dosyası üretir:</p>
+  <ul>
+    <li>Duyurular, kasa özeti, gider listesi, görev sırası ve her dairenin <strong>ödeme durumu</strong> (yıllık aidatın ödenen yüzdesi, ek ödemenin yüzdesi, “bu ay tamam” bilgisi ve sakinin üye olup olmadığı) apartman parolasıyla şifrelenir; parolayı bilen sakinler görür. Bu bölümde tutar yer almaz.</li>
+    <li>Her dairenin borç, ödeme ve dekont bilgileri yalnızca o daireye verilen <strong>daire koduyla</strong> ayrıca şifrelenir. Bir sakin başka bir dairenin tutarlarını göremez.</li>
+  </ul>
+  <p>Sakinlerin yöneticiye ilettiği talepler (ödeme bildirimi, üyelik bildirimi vb.) de şifreli bir kod olarak üretilir. Paketin, kodların ve dekont resminin hangi kanalla gönderileceğine kullanıcı karar verir.</p>
+
+  <h2>6. İzinler</h2>
+  <p>Uygulama internet, konum, rehber veya mikrofon izni istemez. Dekont fotoğrafı için Android'in kamera / fotoğraf seçicisi kullanılır; yalnızca sizin seçtiğiniz resim alınır. Dosya işlemleri sistem dosya seçicisi ve paylaşım menüsü üzerinden yapılır.</p>
+
+  <h2>7. Üyelik ve ödeme</h2>
+  <p>Yönetici uygulamayı ücretsiz kullanır. Sakinler için duyurular ücretsizdir; kapılardaki ödeme halkaları, hesap, dekontlar, kasa ve görev sırası yıllık üyelikle (ilk 1 ay ücretsiz deneme) açılır. Ödeme tamamen Google Play üzerinden alınır ve Google'ın gizlilik politikasına tabidir. Kart ya da ödeme bilgileriniz uygulamaya ve geliştiriciye iletilmez; uygulama yalnızca Play Store'dan üyeliğinizin etkin olup olmadığını öğrenir. Üyeliğinizi Play Store &gt; Ödemeler ve abonelikler bölümünden istediğiniz zaman iptal edebilirsiniz.</p>
+
+  <h2>8. Verilerin silinmesi</h2>
+  <p>Yönetim &gt; “Tüm verileri sil” seçeneğiyle veya uygulamayı kaldırarak tüm verileri ve dekont resimlerini cihazınızdan kalıcı olarak silebilirsiniz. Sakin görünümünde açılan paket “Paketi kaldır” ile, sakinin eklediği dekont ise dekont menüsünden silinir.</p>
+
+  <h2>9. Apartman yönetimi ve KVKK</h2>
+  <p>Apartmandaki kişilere ait bilgilerin veri sorumlusu apartman yönetimidir. Ödeme durumunun (yüzde olarak) sakinlerle paylaşılması yönetimin tercihidir; tutarlar ve dekontlar yalnızca ilgili daire ve yönetici tarafından görülür. Daire bazında borç dökümü içeren “yönetim raporu” yalnızca kat malikleriyle paylaşılmalıdır.</p>
+
+  <h2>10. Çocukların gizliliği</h2>
+  <p>Uygulama apartman yöneticileri ve yetişkin sakinler içindir; 13 yaşın altındaki çocuklara yönelik değildir ve bilerek çocuklardan bilgi toplamaz.</p>
+
+  <h2>11. Değişiklikler</h2>
+  <p>Bu politika değişirse güncel metin bu sayfada yayımlanır ve yukarıdaki tarih güncellenir.</p>
+
+  <h2>12. İletişim</h2>
+  <p>Sorularınız için: <a href="mailto:t15283401@gmail.com">t15283401@gmail.com</a></p>
+</main>
+<footer>© 2026 YTA Apps. Tüm hakları saklıdır.</footer>
+</body>
+</html>
